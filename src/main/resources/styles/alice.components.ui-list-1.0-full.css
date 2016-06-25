@@ -1,0 +1,48 @@
+
+/** begin ---ui-list.css---*/
+/**
+ * @name:         ui-list
+ * @author:       展新(zhanxin.lin@alipay.com)
+ * @Description:  列表
+ * @example:
+ * <ul class="ui-list">
+ *    <li class="ui-list-item">列表</li>
+ * </ul>
+ */
+.ui-list {
+    display: inline-block;
+    padding: 10px 10px;
+}
+/* 默认有方角 */
+.ui-list-item {
+    font-size: 12px;
+    line-height: 20px;
+    background: url(https://img.alipay.com/sys/personal/style/ui-components.png) no-repeat -172px -19px;
+    padding-left: 10px;
+    color: #808080;
+}
+.ui-list-item a {
+    font-size: 12px;
+    line-height: 20px;
+}
+/* 灰色小方角 */
+.ui-list-gray .ui-list-item {
+    background: url(https://img.alipay.com/sys/personal/style/ui-components.png) no-repeat -188px 2px;
+}
+/* 灰色小方角＋灰色链接 */
+.ui-list-graylink .ui-list-item {
+    background: url(https://img.alipay.com/sys/personal/style/ui-components.png) no-repeat -188px 2px;
+}
+.ui-list-graylink .ui-list-item a { color: #666666; }
+/* 没有小图标的 */
+.ui-list-nosquare .ui-list-item {
+    background: transparent;
+    padding-left: 0;
+}
+
+
+/** end ---ui-list.css---*/
+/**Last Changed Author: shuai.shao--Last Changed Date: Wed Dec 07 18:18:01 CST 2011**/
+/**alice.components.ui-list-1.0**/
+/** CurrentDeveloper: lixiaochou**/
+/** DeployDate: Wed Oct 31 15:53:02 CST 2012**/

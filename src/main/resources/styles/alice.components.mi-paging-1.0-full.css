@@ -1,0 +1,223 @@
+
+/** begin ---mi-paging.css---*/
+/**
+ * @name: mi-paging
+ * @author: 天孝(chentao.yuan@alipay.com)
+ * @description: 分页组件
+ * @require: null
+ * @example 
+    <div class="mi-paging fn-clear">
+        <a href="#" class="mi-paging-prev">上一页</a>
+
+        <a href="#" class="mi-paging-item"><span>1</span></a>
+        <a href="#" class="mi-paging-item mi-paging-current"><span>2</span></a>
+        <a href="#" class="mi-paging-item"><span>3</span></a>
+        <a href="#" class="mi-paging-item"><span>4</span></a>
+        <a href="#" class="mi-paging-item"><span>5</span></a>
+        <a href="#" class="mi-paging-item"><span>6</span></a>
+
+        <a href="#" class="mi-paging-item"><span>7</span></a>
+        <span class="mi-paging-ellipsis">...</span>
+        <a href="#" class="mi-paging-item"><span>1024</span></a>
+        <a href="#" class="mi-paging-next">下一页</a>
+        <span class="mi-paging-info fn-ml0"><span class="mi-paging-bold">2/1024</span>页</span> 
+        <span class="mi-paging-info mi-paging-which"><input type="text" name="some_name" value="6"></span>
+
+        <a class="mi-paging-info mi-paging-goto" href="#"><span>跳转</span></a>
+    </div>
+*/
+
+.mi-paging-first, .mi-paging-prev, .mi-paging-next, .mi-paging-last,
+.mi-paging-item, .mi-paging-item span, 
+a.mi-paging-item, a.mi-paging-item span, .mi-paging-ellipsis, 
+.mi-paging-goto, .mi-paging-goto span, a.mi-paging-goto, a.mi-paging-goto span, .mi-paging-which, .mi-paging-which input{
+    float:left;
+    background: transparent url("https://i.alipayobjects.com/e/201205/2jqK0T2ozZ.png") no-repeat 0 0;
+}
+.mi-paging {height:24px;}
+.mi-paging, .mi-paging input { color:#4d4d4d; }
+
+.mi-paging a{
+    color:#4d4d4d;
+    margin:0 2px 0 0;
+}
+.mi-paging a, .mi-paging a:hover {
+    text-decoration:none;
+}
+
+/** 默认样式 */
+.mi-page-item, a.mi-paging-item {
+    font-weight:700;
+    text-decoration:none;
+    height:24px;
+    line-height:24px;
+    padding:0 0 0 7px;
+    background-position:0 -120px;
+}
+
+.mi-page-item span, a.mi-paging-item span {
+    padding:0 7px 0 0;
+    background-position:right -120px;
+    cursor:pointer;
+}
+
+/** 鼠标移上去样式 */
+.mi-paging-hover, a.mi-paging-item:hover {
+    background-position:0 -144px;
+}
+.mi-paging-hover, a.mi-paging-item:hover span {
+    background-position:right -144px;
+}
+
+/** 当前样式 */
+.mi-paging-current, a.mi-paging-current, a.mi-paging-current:hover {
+    color:#fff;
+    background-position:0 -192px;
+}
+.mi-paging-current span, a.mi-paging-current span, a.mi-paging-current:hover span {
+    color:#fff;
+    background-position:right -192px;
+}
+
+/** 上一页 */
+.mi-paging-first, a.mi-paging-first,
+.mi-paging-prev, a.mi-paging-prev {
+    margin-right:5px;
+    height: 24px;
+    width: 45px;
+    padding:0 0 0 22px;
+    line-height:24px;
+    overflow:hidden;
+}
+.mi-paging-first-hover, a.mi-paging-first:hover,
+.mi-paging-prev-hover, a.mi-paging-prev:hover {
+    background-position:0 -24px;
+    text-decoration:none;
+}
+.mi-paging-last, a.mi-paging-last,
+.mi-paging-next, a.mi-paging-next {
+    margin:0 8px 0 3px;
+    padding:0 0 0 10px;
+    height: 24px;
+    width: 57px;
+    background-position:-67px 0;
+    line-height:24px;
+}
+.mi-paging-last-hover, a.mi-paging-last:hover,
+.mi-paging-next-hover, a.mi-paging-next:hover {
+    background-position:-67px -24px;
+    text-decoration:none;
+}
+
+span.mi-paging-first, span.mi-paging-prev, span.mi-paging-next, span.mi-paging-last {
+    color:#ccc;
+}
+span.mi-paging-first, span.mi-paging-prev {
+    background-position:0 -48px;
+}
+span.mi-paging-next, span.mi-paging-last{
+    background-position:-67px -48px;
+}
+
+.mi-paging-info {
+    line-height:24px;
+    line-height:26px\9;
+    *line-height:26px;
+    _line-height:24px;
+    float:left;
+    display:inline;
+    margin:0 6px 0 5px;
+    height:24px;
+    overflow:hidden;
+}
+
+.mi-paging-ellipsis {
+    width:35px;
+    height:24px;
+    text-indent:-10em;
+    overflow:hidden;
+    margin:0 2px 0 0;
+    background-position:0 -216px;
+}
+
+.mi-paging-goto, a.mi-paging-goto {
+    padding:0 0 0 12px;
+    background-position:0 -72px;
+}
+.mi-paging-goto span, a.mi-paging-goto span {
+    padding:0 11px 0 0;
+    background-position:right -72px;
+    cursor:pointer;
+}
+.mi-paging-goto-hover, .mi-paging-goto:hover {
+    background-position:0 -96px;
+}
+
+.mi-paging-goto-hover span, .mi-paging-goto:hover span {
+    background-position:right -96px;
+}
+
+.mi-paging-which {
+    padding:0 0 0 5px;
+    background-position:0 -168px;
+}
+
+.mi-paging-which input {
+    background-position:right -168px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 6px;
+    width:20px;
+    font-weight:700;
+    border:none;
+    overflow:hidden;
+}
+
+.mi-paging-bold {
+    font-weight:700;
+    padding:0 8px 0 7px;
+}
+
+.mi-paging-first, a.mi-paging-first, .mi-paging-prev, a.mi-paging-prev, .mi-paging-next, a.mi-paging-next, .mi-paging-last, a.mi-paging-last {
+    line-height:28px\9;
+    *line-height:28px;
+    _line-height:24px;
+}
+
+/** 文字翻页样式 reset 重置默认样式 */
+
+.mi-paging-text a.mi-paging-first,  .mi-paging-text a.mi-paging-first:hover,
+.mi-paging-text a.mi-paging-prev, .mi-paging-text a.mi-paging-prev:hover,
+.mi-paging-text a.mi-paging-next, .mi-paging-text a.mi-paging-next:hover,
+.mi-paging-text a.mi-paging-last,  .mi-paging-text a.mi-paging-last:hover {
+    background:url("https://i.alipayobjects.com/e/201205/2bxYWH4pqb.png") no-repeat 0 30px;
+    width:auto;
+    color:#06B;
+}
+/** 首页 */
+.mi-paging-text a.mi-paging-first,  .mi-paging-text a.mi-paging-first:hover {
+    background-position:0 8px;
+    padding:0 5px 0 20px;
+}
+/** 上一页 */
+.mi-paging-text a.mi-paging-prev, .mi-paging-text a.mi-paging-prev:hover {
+    background-position:8px -49px;
+    padding:0 5px 0 20px;
+}
+/** 下一页 */
+.mi-paging-text a.mi-paging-next, .mi-paging-text a.mi-paging-next:hover {
+    background-position:39px -30px;
+    padding:0 20px 0 5px;
+    margin-right:5px;
+}
+/** 尾页 */
+.mi-paging-text a.mi-paging-last,  .mi-paging-text a.mi-paging-last:hover {
+    background-position:right -11px;
+    padding:0 20px 0 5px;
+}
+
+/** end ---mi-paging.css---*/
+/**Last Changed Author: chentao.yuan--Last Changed Date: Fri Jun 15 11:31:02 CST 2012**/
+/**alice.components.mi-paging-1.0**/
+/** CurrentDeveloper: Shawn**/
+/** DeployDate: Fri Jun 15 13:20:53 CST 2012**/

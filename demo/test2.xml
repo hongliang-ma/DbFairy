@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fairDbConfig>
+  <dbSetSrc alias="aliyunDb" driverClass="MYSQL" connectionUrl="jdbc:mysql://10.125.224.24:3306/odbsyunying?uerUnicode=true&amp;characterEncoding=gbk" username="odbsyunying" password="odbsyunying"/>
+  <dbSetDst alias="linyunDb" driverClass="ORACLE" connectionUrl="jdbc:oracle:thin:@10.232.31.123:1521:huijin" username="bss2" password="bss2"/>
+  <flows>
+    <flow descritption="测试比较所有的已经支付的订单" handleTool="COUNT" userShare="true" groovyDir="D:/selfCode/DbFairy/demo" groovyName="test.groovy">
+      <sqlShare dbAalias="aliyunDb">
+        <sql>select tc.order_id  from `order` tc where  tc.order_status=2</sql>
+      </sqlShare>
+      <sqlSrc dbAalias="aliyunDb">
+        <sql>select *  from order_line  where order_id=?  and order_status=?</sql>
+        <sqlPara>($&amp;get(order_id)$)($2$)</sqlPara>
+      </sqlSrc>
+      <sqlDst dbAalias="linyunDb">
+        <sql>select *  from upp_biz_order tc where tc.parent_id=?</sql>
+        <sqlPara>($&amp;get(order_id)$)</sqlPara>
+      </sqlDst>
+    </flow>
+  </flows>
+</fairDbConfig>

@@ -1,0 +1,266 @@
+
+/** begin ---mi-tip.css---*/
+/** 提示样式 icon的上，左，下边距都是10px 距离文字是9px 单行高度为34px 其中icon高度为14px
+ * @name: mi-tip
+ * @author: 天孝(chentao.yuan@alipay.com)
+ * @description: tip提示组件
+ * @require: null
+ * @example 
+基本样式
+<div class="mi-tip"></div>
+
+带箭头标识, 其它同样添加标签即可。
+<div class="mi-tip mi-tip-error">
+   <div class="mi-tip-arrow"></div>
+    <div class="mi-tip-ctn"></div>
+</div>
+
+
+错误提示
+<div class="mi-tip mi-tip-error">
+    <div class="mi-tip-ctn"></div>
+</div>
+
+警告提示
+<div class="mi-tip mi-tip-warn">
+    <div class="mi-tip-ctn"></div>
+</div>
+
+信息提示
+<div class="mi-tip mi-tip-cue">
+    <div class="mi-tip-ctn"></div>
+</div>
+
+禁止提示
+<div class="mi-tip mi-tip-forbidden">
+    <div class="mi-tip-ctn"></div>
+</div>
+
+成功提示
+<div class="mi-tip mi-tip-success">
+    <div class="mi-tip-cnt"></div>
+</div>
+*/
+
+.mi-tip {
+    border: 1px solid #C9D5E3;
+    background-color: #E4F5FF;
+    margin: 10px 0 0;
+    zoom: 1;
+    position: relative;
+    color:#4d4d4d;
+}
+
+/** tip当中的小箭头 */
+.mi-tip-arrow {
+    position: absolute;
+    top: -8px;
+    left: 36px;
+    font-size: 0;
+    width: 13px;
+    height: 9px;
+    overflow: hidden;
+    background: url("https://i.alipayobjects.com/e/201205/2jqI4wyfNx.png") no-repeat 0 0
+}
+
+/** tip容器 */
+.mi-tip-ctn {
+    padding: 6px 10px 6px 32px;
+    padding:7px 10px 5px 32px\9; /** for ie8 */
+    *padding:8px 10px 4px 32px;  /** for ie7 */
+    _padding:6px 10px 6px 32px;  /** for ie6 */
+    border: 1px solid #F8FCFF;
+}
+
+/** tip说明文字 */
+.mi-tip-explain {
+    margin-top: 1px;
+}
+
+.mi-tip-success .mi-tip-ctn,
+.mi-tip-forbidden .mi-tip-ctn,
+.mi-tip-cue .mi-tip-ctn,
+.mi-tip-warn .mi-tip-ctn,
+.mi-tip-error .mi-tip-ctn,
+.mi-tip-doubt .mi-tip-ctn,
+.mi-tip-wait .mi-tip-ctn,
+.mi-tip-close {
+    background: url("https://i.alipayobjects.com/e/201205/2jqI4wyfNx.png") no-repeat 0 0;
+}
+
+.mi-tip-close {
+    position:absolute;
+    top:6px;
+    right:6px;
+    width:8px;
+    height:7px;
+    line-height:0;
+    display:block;
+    overflow:hidden;
+    text-indent:-100em;
+    cursor:pointer;
+    background-position:-25px 0;
+}
+
+/** 成功提示 */
+.mi-tip-success {
+    border-color:#B9E39B;
+}
+
+.mi-tip-success .mi-tip-ctn {
+    background-color: #E7FFCB;
+    background-position: -478px -517px;
+    *background-position:-478px -516px;
+}
+
+/** 禁止提示 */
+.mi-tip-forbidden {
+    border-color: #F6C8B5;
+}
+
+.mi-tip-forbidden .mi-tip-arrow {
+    background-position: 0 -20px;
+}
+
+.mi-tip-forbidden .mi-tip-ctn {
+    background-color: #FCEEE8;
+    background-position: -450px -542px;
+    *background-position: -449px -541px;
+}
+
+/** 信息提示 */
+.mi-tip-cue {
+    border-color: #C9D5E3;
+}
+
+.mi-tip-cue .mi-tip-arrow {
+    background-position: 0 0;
+}
+
+.mi-tip-cue .mi-tip-ctn {
+    background-color: #E5F5FF;
+    background-position: -423px -567px;
+    *background-position: -422px -566px;
+}
+
+/** 警告提示 */
+.mi-tip-warn {
+    border-color: #E8C561;
+}
+
+.mi-tip-warn .mi-tip-arrow {
+    background-position: 0 -10px;
+}
+
+.mi-tip-warn .mi-tip-ctn {
+    background-color: #FFFF8D;
+    background-position: -392px -593px;
+    *background-position:-391px -592px;
+}
+
+/** 错误提示 */
+.mi-tip-error {
+    border-color: #F5C8B5;
+}
+
+.mi-tip-error .mi-tip-arrow {
+    background-position: 0 -20px;
+}
+
+.mi-tip-error .mi-tip-ctn {
+    background-color: #FDEEE9;
+    background-position: -360px -623px;
+    *background-position: -359px -622px;
+}
+
+/** 疑问提示 */
+.mi-tip-doubt {
+    border-color: #C9D5E3;
+}
+
+.mi-tip-doubt .mi-tip-ctn {
+    background-color: #E4F5FF;
+    background-position: -330px -650px;
+    *background-position:-329px -649px;
+}
+
+/** 等待提示 */
+.mi-tip-wait {
+    border-color: #C9D5E3;
+}
+
+.mi-tip-wait .mi-tip-ctn {
+    background-color: #E4F5FF;
+    background-position: -297px -678px;
+    *background-position:-296px -677px;
+}
+
+/** 无图标提示 */
+.mi-tip-noicon {
+    
+}
+
+.mi-tip-noicon .mi-tip-ctn {
+    padding-left:10px;
+    background-image:none;
+}
+
+/** 有关闭按钮 */
+.mi-tip-canclose .mi-tip-ctn {
+    padding-right:20px;
+}
+
+/** cue提示左边显示箭头 */
+.mi-tip-cue-larrow {
+    margin-left:7px;
+}
+
+/** cue提示右边显示箭头 */
+.mi-tip-cue-rarrow {
+    margin-right:7px;
+}
+
+.mi-tip-cue-rarrow .mi-tip-arrow,
+.mi-tip-cue-barrow .mi-tip-arrow,
+.mi-tip-cue-larrow .mi-tip-arrow {
+    width:9px;
+    height:13px;
+    background-position:-48px 0;
+}
+
+/** cue提示右边显示箭头 */
+.mi-tip-cue-rarrow .mi-tip-arrow {
+    right:-8px;
+    top:9px;
+    left:auto;
+}
+
+/** cue提示下边显示箭头 */
+.mi-tip-cue-barrow .mi-tip-arrow {
+    width:13px;
+    height:9px;
+    top:auto;
+    left:36px;
+    bottom:-8px;
+    background-position:-34px 0;
+}
+
+/** cue提示左边显示箭头 */
+.mi-tip-cue-larrow .mi-tip-arrow {
+    top:9px;
+    left:-8px;
+    background-position:-15px 0;
+}
+
+
+
+
+
+
+
+
+/** end ---mi-tip.css---*/
+/**Last Changed Author: chentao.yuan--Last Changed Date: Fri Jun 15 11:33:40 CST 2012**/
+/**alice.components.mi-tip-1.0**/
+/** CurrentDeveloper: Shawn**/
+/** DeployDate: Fri Jun 15 13:19:43 CST 2012**/

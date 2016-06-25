@@ -1,0 +1,239 @@
+
+/** begin ---mi-nav.css---*/
+/**
+ * @name: mi-nav
+ * @author: 天孝(chentao.yuan@alipay.com)
+ * @description: 导航样式
+ * @require: [mi-table (如果是mi-nav-dropdown形式)]
+*/
+.mi-nav{
+    margin:10px 0 0;
+    height:66px;
+    overflow:hidden;
+    padding-left:15px;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat 0 0;
+}
+
+.mi-nav-container {
+    height:100%;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") repeat-x 0 -230px;
+}
+
+.mi-nav-container .mi-nav-content {
+    height:100%;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat right -66px;
+}
+
+.mi-nav-item {
+    float:left;
+    height: 36px;
+    line-height: 36px;
+    padding-right: 4px;
+    position: relative;
+    text-align: center;
+    width: 105px;
+}
+
+.mi-nav-item-child, .mi-nav-item-child:visited{
+    font-size:14px;
+    height:26px;
+    line-height:26px;
+    color:#fff;
+    display:block;
+    margin:5px 0 0;
+    overflow:hidden;
+}
+
+.mi-nav-item-child strong {
+    display:block;
+    height:100%;
+    cursor:pointer;
+}
+
+.mi-nav-item-current{}
+
+.mi-nav-item-current .mi-nav-item-child, .mi-nav-item-current .mi-nav-item-child:visited {
+    color:#000;
+    height:31px;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat 0 -131px;
+}
+
+.mi-nav-item-current .mi-nav-item-child strong {
+    display:block;
+    height:100%;
+    padding-top:2px;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat right -180px;
+}
+
+.mi-nav-item-child:hover, .mi-nav-item-child-hover {
+    text-decoration:none;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat 0 -315px;
+}
+
+.mi-nav-item-child:hover strong, .mi-nav-item-child-hover strong {
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat right -360px;
+}
+
+.mi-nav-item-current .mi-nav-item-child:hover {background-position:0 -131px;}
+
+.mi-nav-item-current .mi-nav-item-child:hover strong {background-position:right -180px;}
+
+.mi-nav-child {
+    display:none;
+    left: 0;
+    padding: 3px 0 0;
+    position: absolute;
+    text-align: left;
+    top: 36px;
+    width: 950px;
+}
+
+.mi-nav-child .mi-nav-item {
+    height: 30px;
+    margin-right: 4px;
+    overflow: hidden;
+    text-align: center;
+    width: 78px;
+    padding:0;
+}
+
+.mi-nav-child .mi-nav-item-child, .mi-nav-child .mi-nav-item-child:visited {
+    color:#4D4D4D;
+    height: 22px;
+    font-size:12px;
+    margin:0;
+    overflow:hidden;
+    background:none;
+}
+
+.mi-nav-child .mi-nav-item-child span {
+    height:22px;
+    line-height:22px;
+    display:block;
+    cursor:pointer;
+}
+
+.mi-nav-child .current, .mi-nav-child .current:visited {
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat 0 -487px;
+}
+
+.mi-nav-child .current span {
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat right -528px;
+}
+
+.mi-nav-child .mi-nav-item-child:hover, .mi-nav-child .current:hover {
+    text-decoration:none;
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat 0 -405px;
+}
+
+.mi-nav-child .mi-nav-item-child:hover span, .mi-nav-child .current:hover span {
+    background:url("https://img.alipay.com/pa/frame/v2/bg-nav.png") no-repeat right -446px
+}
+
+.mi-nav-item-current .mi-nav-child {
+    display:block;
+    background:none;
+}
+
+
+/** 下拉导航 */
+.mi-nav-dropdown {
+    height:36px;
+    overflow:visible;
+    position:relative;
+    z-index:1;
+}
+
+.mi-nav-dropdown .mi-nav-item {
+    position:relative;
+}
+
+.mi-nav-dropdown .mi-nav-child {
+    display:none;
+}
+
+.mi-nav-droplist {
+    display:none;
+    background-color:#f6f6f6;
+    padding:0 2px 2px 0;
+    line-height:normal;
+    position:absolute;
+    left:1px;
+    top:34px;
+    float:left;
+}
+
+.mi-nav-dropiframe {
+    display:none;
+    width:482px;
+    height:210px;
+    background-color:#f6f6f6;
+    position:absolute;
+    left:0;
+    top:36px;
+}
+
+.mi-nav-droplist .mi-table {
+    border:1px solid #c7c7c7;
+    border-top:none;
+    padding:24px 0 26px;
+    overflow:hidden;
+    *overflow:visible;
+}
+.mi-nav-droplist .mi-table table {
+    border:none;
+    border-left:1px solid #c7c7c7;
+    position:relative;
+    z-index:0;
+    left:-1px;
+    word-break:keep-all;
+    white-space:nowrap;
+    width:auto;
+}
+
+.mi-nav-droplist .mi-table th, .mi-nav-droplist .mi-table td {
+    border-color:#e8e8e8;
+    padding:5px 19px 0 20px;
+}
+
+.mi-nav-droplist .mi-table th {
+    background-image:none;
+    background-color:#fff;
+    border-bottom:none;
+    padding-top:0;
+}
+.mi-nav-droplist .mi-table td {
+    vertical-align:top;
+}
+
+.mi-nav-droplist a, .mi-nav-droplist a:visited {
+    color:#818181;
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    padding:3px 1px 3px 3px;
+    margin:3px 0 2px;
+    white-space:nowrap;
+}
+
+.mi-nav-droplist a:hover {
+    text-decoration:none;
+    background-color:#a0a0a0;
+    color:#fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+.mi-nav-item-droplist .mi-nav-droplist, .mi-nav-item-droplist .mi-nav-dropiframe {
+    display:block;
+}
+
+
+
+
+/** end ---mi-nav.css---*/
+/**Last Changed Author: chentao.yuan--Last Changed Date: Fri Jul 27 13:36:29 CST 2012**/
+/**alice.components.mi-nav-1.0-SNAPSHOT**/
+/** CurrentDeveloper: chentao.yuan**/
+/** DeployDate: Thu Aug 16 18:20:26 CST 2012**/

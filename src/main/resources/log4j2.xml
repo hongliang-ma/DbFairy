@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration status="OFF">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n"/>
+        </Console>
+    </appenders>
+    <loggers>
+
+  	 <logger name="com.dagger.transfer" level="INFO">
+     	<appender-ref ref="Console" />  
+     </logger>  
+
+    <root level="INFO">
+        <appender-ref ref="Console"/>
+    </root>
+    </loggers>
+</configuration>

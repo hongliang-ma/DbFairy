@@ -1,0 +1,142 @@
+
+/** begin ---mi-notice.css---*/
+/*
+ * @name: mi-notice
+ * @author: 天孝(chentao.yuan@alipay.com)
+ * @description: 通用提示, 成功提示、禁止提示、信息提示、警告提示、错误提示、疑问提示、等待提示。
+ * @require: null
+ * @example 
+<div class="mi-notice mi-notice-success">
+    <div class="mi-notice-cnt">
+        <h3 class="mi-notice-title">成功</h3>
+        <p class="mi-notice-explain">
+            缴款成功成功！
+        </p>
+        <p class="mi-notice-explain-other">
+            现在您可能需要：<a href="#">返回首页</a>
+            <span class="fn-bar">|</span>
+            <a href="#">返回账单查询</a>
+            <span class="fn-bar">|</span>
+            <a href="#">返回合同查询</a>
+        </p>
+    </div>
+</div>
+*/
+.mi-notice {
+    font-size: 12px;
+    min-height: 50px;
+    _height: 50px;
+    padding: 14px 22px 12px 87px;
+}
+
+.mi-notice-success,
+.mi-notice-forbidden,
+.mi-notice-cue,
+.mi-notice-warn,
+.mi-notice-error,
+.mi-notice-doubt,
+.mi-notice-wait {
+    background: url("https://i.alipayobjects.com/e/201205/2mWCqOSIk5.png") no-repeat 0 0;
+    border:1px solid #E5E5CD;
+}
+
+.mi-notice-success {
+    background-color: #EFFFCF;
+    background-position: -428px 15px;
+    border-color:#E7E7CF;
+}
+
+.mi-notice-forbidden {
+    background-color: #FFEFEB;
+    background-position: -353px -32px;
+    border-color:#F7CBB6;
+}
+
+.mi-notice-cue {
+    background-color: #E5F5FF;
+    background-position: -280px -83px;
+    border-color:#CBD7E3;
+}
+
+.mi-notice-warn {
+    background-color: #FFFF9E;
+    background-position: -208px -133px;
+    border-color:#E8C761;
+}
+
+.mi-notice-error {
+    background-color: #FFEFEF;
+    background-position: -136px -182px;
+    border-color:#F7CBB6;
+}
+
+.mi-notice-doubt {
+    background-color: #E5F5FF;
+    background-position: -60px -230px;
+    border-color:#CBD7E3;
+}
+
+.mi-notice-wait {
+    background-color: #E5F5FF;
+    background-position: 27px -281px;
+    border-color:#CBD7E3;
+}
+
+.mi-notice-title {
+    color:#4d4d4d;
+    font:700 14px \5B8B\4F53;
+    margin: 0;
+    padding: 0 0 0;
+}
+
+.mi-notice-explain {
+    color: #999;
+    margin: 4px 0 0;
+    padding: 0;
+}
+
+.mi-notice-explain-other {
+    color: #4d4d4d;
+    margin: 3px 0 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+.mi-notice-explain-other .ft-bar{
+    padding:0 5px;
+}
+
+.mi-notice-noexplain .mi-notice-cnt {
+    padding:11px 0 0;
+}
+
+/**
+    嵌套于xbox之中
+    xboxClass:{
+                MOCK_CLASS: 'mi-notice-inxbox'
+            }
+*/
+
+.mi-notice-inxbox .mi-xbox-action a,
+.mi-notice-inxbox .mi-xbox-action a:hover {
+    text-decoration:none;
+}
+.mi-notice-inxbox .mi-notice-success,
+.mi-notice-inxbox .mi-notice-forbidden,
+.mi-notice-inxbox .mi-notice-cue,
+.mi-notice-inxbox .mi-notice-warn,
+.mi-notice-inxbox .mi-notice-error,
+.mi-notice-inxbox .mi-notice-doubt,
+.mi-notice-inxbox .mi-notice-wait {
+    border:none;
+    background-color:#fff;
+    margin-top:5px;
+    padding-bottom:27px;
+}
+
+
+/** end ---mi-notice.css---*/
+/**Last Changed Author: chentao.yuan--Last Changed Date: Fri Jun 15 11:33:16 CST 2012**/
+/**alice.components.mi-notice-1.0**/
+/** CurrentDeveloper: Shawn**/
+/** DeployDate: Fri Jun 15 13:20:22 CST 2012**/

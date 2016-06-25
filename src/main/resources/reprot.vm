@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="gb2312">
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>$title</title>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.base-1.0.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-font-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-function-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-button-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-footer-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-header-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-form-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-grid-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-line-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-message-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-notice-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-paging-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-tab-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-table-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-tip-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.ui-list-1.0-full.css"/>
+            <link rel="stylesheet" type="text/css"  href="/styles/alice.components.mi-nav-1.0-SNAPSHOT-full.css"/>
+</head>
+<body>
+    <div class="layout">
+        <div class="content">
+            <div class="mi-grid-row">
+                <div class="mi-grid-20  mi-table">
+                    <div>一共执行了$listResult.size() 个flow，其中成功的flow</div>
+                    <div>
+                        #foreach( $transferResult in $listResult)
+                            #if (true == $transferResult.bGood) 
+                                用例描述为:$transferResult.description<br/>
+		  待迁移的sql语句:$transferResult.sqlSrc<br/>
+		  迁移后的sql语句:$transferResult.sqlDst<br/>
+                                $listSucss = $transferResult.listSucss;
+                                其中成功的参数为:
+                                #foreach( $sucss in $listSucss)
+                                    $sucss<br/>
+								#end
+								 $listError = $transferResult.listError;
+		  其中失败的参数为:
+		                        #foreach( $error in $listError)
+                                    $error<br/>
+								#end
+                            #end
+						#end
+						<div>其中失败的flow</div>
+                        #foreach( $transferResult in $listResult)
+                            #if(false == $transferResult.bGood) 
+                                用例描述为:$transferResult.description<br/>
+		 失败的原因为:$transferResult.errorCode.getDescription()<br/>
+		  待迁移的sql语句:$transferResult.sqlSrc<br/>
+		   迁移后的sql语句:$transferResult.sqlDst<br/>
+                                $listSucss = $transferResult.listSucss;
+                                其中成功的参数为:
+                                #foreach( $sucss in $listSucss)
+                                    $sucss<br/>
+								#end
+								 $listError = $transferResult.listError;
+		  其中失败的参数为:
+		                        #foreach( $error in $listError)
+                                    $error<br/>
+								#end
+                            #end
+						#end
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

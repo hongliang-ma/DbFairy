@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fairDbConfig>
+  <dbSetSrc alias="aliyunDb" driverClass="MYSQL" connectionUrl="jdbc:mysql://10.125.224.24:3306/odbsyunying?uerUnicode=true&amp;characterEncoding=gbk" username="odbsyunying" password="odbsyunying"/>
+  <dbSetDst alias="linyunDb" driverClass="ORACLE" connectionUrl="jdbc:oracle:thin:@10.232.31.123:1521:huijin" username="bss2" password="bss2"/>
+  <flows>
+    <flow descritption="测试同一个主订单下有子订单的数量" handleTool="COUNT" userShare="false" groovyDir="D:/selfCode/DbFairy/demo" groovyName="test.groovy">
+      <sqlSrc dbAalias="aliyunDb">
+        <sql>select count(*) from order_line tc where tc.order_id=?</sql>
+        <sqlPara>($201312310349901177$)</sqlPara>
+        <sqlPara>($201312310349901230$)</sqlPara>
+        <sqlPara>($201312310349901339$)</sqlPara>
+        <sqlPara>($201312310349901464$)</sqlPara>
+        <sqlPara>($201312310349901854$)</sqlPara>
+      </sqlSrc>
+      <sqlDst dbAalias="linyunDb">
+        <sql>select count(*)  from upp_biz_order tc where tc.parent_id=?</sql>
+        <sqlPara>($201312310349901177$)</sqlPara>
+        <sqlPara>($201312310349901230$)</sqlPara>
+        <sqlPara>($201312310349901339$)</sqlPara>
+        <sqlPara>($201312310349901464$)</sqlPara>
+        <sqlPara>($201312310349901854$)</sqlPara>
+      </sqlDst>
+    </flow>
+    <flow descritption="测试同一个主订单的订单总价是否正确" handleTool="FILEDHANDLE" userShare="false" groovyDir="D:/selfCode/DbFairy/demo" groovyName="testPrice.groovy">
+      <sqlSrc dbAalias="aliyunDb">
+        <sql>select tc.pay_amount from tc.order_id=? and tc.order_status=?</sql>
+        <sqlPara>($201312310349901177$)($2$)</sqlPara>
+        <sqlPara>($201312310349901230$)($2$)</sqlPara>
+        <sqlPara>($201312310349901339$)($2$)</sqlPara>
+        <sqlPara>($201312310349901464$)($2$)</sqlPara>
+        <sqlPara>($201312310349901854$)($2$)</sqlPara>
+      </sqlSrc>
+      <sqlDst dbAalias="linyunDb">
+        <sql>select tc.total_pay_fee from upp_biz_order tc where tc.outer_trade_code=? and tc.order_status=?</sql>
+        <sqlPara>($201312310349901177$)($2$)</sqlPara>
+        <sqlPara>($201312310349901230$)($2$)</sqlPara>
+        <sqlPara>($201312310349901339$)($2$)</sqlPara>
+        <sqlPara>($201312310349901464$)($2$)</sqlPara>
+        <sqlPara>($201312310349901854$)($2$)</sqlPara>
+      </sqlDst>
+    </flow>
+  </flows>
+</fairDbConfig>
